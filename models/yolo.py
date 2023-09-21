@@ -11,6 +11,7 @@ import contextlib
 import os
 import platform
 import sys
+import Attention_model
 from copy import deepcopy
 from pathlib import Path
 from Attention_model import SEnet_Block,CA_Block,CBAM_Block,ECA_Block
@@ -165,7 +166,7 @@ class BaseModel(nn.Module):
 
 class DetectionModel(BaseModel):
     # YOLOv5 detection model
-    def __init__(self, cfg='yolov5s.yaml', ch=3, nc=None, anchors=None):  # model, input channels, number of classes
+    def __init__(self, cfg='yolov5s_test.yaml', ch=3, nc=None, anchors=None):  # model, input channels, number of classes
         super().__init__()
         if isinstance(cfg, dict):
             self.yaml = cfg  # model dict
@@ -362,7 +363,7 @@ def parse_model(d, ch):  # model_dict, input_channels(3)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--cfg', type=str, default='yolov5s_Test.yaml', help='model.yaml')
+    parser.add_argument('--cfg', type=str, default='yolov5s_test.yaml', help='model.yaml')
     parser.add_argument('--batch-size', type=int, default=1, help='total batch size for all GPUs')
     parser.add_argument('--device', default='', help='cuda device, i.e. 0 or 0,1,2,3 or cpu')
     parser.add_argument('--profile', action='store_true', help='profile model speed')

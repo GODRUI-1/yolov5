@@ -1,0 +1,17 @@
+path: /datasets/bdd100k  # dataset root dir
+train: /datasets/bdd100k/train 
+val: /datasets/bdd100k/val  
+test: /datasets/bdd100k/test  
+# Classes
+names:
+0: 'car'
+1: 'bus'
+2: 'person'
+3: 'bike'
+4: 'truck'
+5: 'motor'
+6: 'train'
+7: 'rider'
+8: 'traffic sign'
+9: 'traffic light'
+
